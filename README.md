@@ -29,19 +29,19 @@ Create three tables in MySQL database: ```authors```, ```books```, ```book_loans
 This query join these three tables and will return the total number of books and the last return date of each author. If the author has no book, the total number of books will be 0 and the last return date will be NULL.
 ```sql
 SELECT
-        authors.author_name,
-        COUNT(books.book_id) AS total_books,
-        MAX(loan_history.return_date) AS last_return_date
-    FROM
-        authors
-    LEFT JOIN
-        books ON authors.author_id = books.author_id
-    LEFT JOIN
-        book_loans AS loan_history ON books.book_id = loan_history.book_id
-    GROUP BY
-        authors.author_name
-    ORDER BY
-        last_return_date DESC;
+    authors.author_name,
+    COUNT(books.book_id) AS total_books,
+    MAX(loan_history.return_date) AS last_return_date
+FROM
+    authors
+LEFT JOIN
+    books ON authors.author_id = books.author_id
+LEFT JOIN
+    book_loans AS loan_history ON books.book_id = loan_history.book_id
+GROUP BY
+    authors.author_name
+ORDER BY
+    last_return_date DESC;
 ```
 
 ### Results
