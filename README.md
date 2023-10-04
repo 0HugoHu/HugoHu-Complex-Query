@@ -44,6 +44,8 @@ ORDER BY
     last_return_date DESC;
 ```
 
+The results are expected: There are two authors: 1 and 2, and have 2 and 1 books respectively. The last return date of author 1 is 2021-10-10 and author 2 is 2021-10-09.
+
 ### Results
 ![](.tutorial/week7-1.png)
 
